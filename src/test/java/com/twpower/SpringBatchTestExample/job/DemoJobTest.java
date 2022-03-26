@@ -42,6 +42,6 @@ public class DemoJobTest {
 
         JobExecution jobExecution = jobLauncherTestUtils.launchJob(jobParameters);
         Assert.assertSame(jobExecution.getStatus(), BatchStatus.COMPLETED);
-        Assertions.fail();
+        Assert.assertTrue(false);
     }
 }
