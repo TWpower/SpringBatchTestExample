@@ -1,7 +1,7 @@
 package com.twpower.SpringBatchTestExample.job;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.batch.core.BatchStatus;
@@ -32,7 +32,7 @@ public class DemoJobTests {
     @Test
     public void testDemoJobDemoStep1() {
         JobExecution jobExecution = jobLauncherTestUtils.launchStep("demo-step-1");
-        Assert.assertSame(jobExecution.getStatus(), BatchStatus.COMPLETED);
+        Assertions.assertSame(jobExecution.getStatus(), BatchStatus.COMPLETED);
     }
 
     @Test
@@ -40,7 +40,6 @@ public class DemoJobTests {
         JobParameters jobParameters = new JobParametersBuilder(jobLauncherTestUtils.getUniqueJobParameters()).toJobParameters();
 
         JobExecution jobExecution = jobLauncherTestUtils.launchJob(jobParameters);
-        Assert.assertSame(jobExecution.getStatus(), BatchStatus.COMPLETED);
-        Assert.assertTrue(false);
+        Assertions.assertSame(jobExecution.getStatus(), BatchStatus.COMPLETED);
     }
 }
