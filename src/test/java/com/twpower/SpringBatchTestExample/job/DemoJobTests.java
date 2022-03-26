@@ -2,8 +2,7 @@ package com.twpower.SpringBatchTestExample.job;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
-import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.JobExecution;
@@ -25,7 +24,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @EnableBatchProcessing
 @ContextConfiguration(classes = {DemoJob.class})
 @TestPropertySource("classpath:application-demo-job-test.properties")
-public class DemoJobTest {
+public class DemoJobTests {
 
     @Autowired
     private JobLauncherTestUtils jobLauncherTestUtils;
