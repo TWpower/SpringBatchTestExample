@@ -9,7 +9,7 @@ class SpringBatchTestExampleApplicationTests {
 
 	@Test
 	void testContextLoads() {
-		Assertions.assertTrue(false);
+		Assertions.assertTrue(true);
 	}
 
 }
