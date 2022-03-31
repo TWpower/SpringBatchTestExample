@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-@ConditionalOnExpression("'${type}' == 'demo'")
+//@ConditionalOnExpression("'${type}' == 'demo'")
 public class DemoJob {
 
     private final JobBuilderFactory jobBuilderFactory;
@@ -24,6 +24,10 @@ public class DemoJob {
                 .start(demoStep1())
                 .next(demoStep2())
                 .build();
+    }
+
+    public String returnString (String sample) {
+        return sample;
     }
 
     public Step demoStep1() {

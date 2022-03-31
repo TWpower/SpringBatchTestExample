@@ -22,17 +22,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @Slf4j
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {DemoJob.class})
-@EnableAutoConfiguration
-@EnableBatchProcessing
-@Configuration
+@SpringBootTest(classes = {DemoJob.class, DemoJobTestConfig.class})
 @TestPropertySource("classpath:application-demo-job-test.properties")
 public class DemoJobTests {
 
-    @Bean
-    public JobLauncherTestUtils jobLauncherTestUtils() {
-        return new JobLauncherTestUtils();
-    }
+    @Autowired
+    private JobLauncherTestUtils jobLauncherTestUtils;
 
     @Test
     public void testDemoJobDemoStep1() {
