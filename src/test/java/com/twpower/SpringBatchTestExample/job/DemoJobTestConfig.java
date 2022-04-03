@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @EnableBatchProcessing
 public class DemoJobTestConfig {
     @Bean
-    public JobLauncherTestUtils jobLauncherTestUtils() { // (2)
+    public JobLauncherTestUtils jobLauncherTestUtils() {
         return new JobLauncherTestUtils();
     }
 }
