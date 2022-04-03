@@ -32,5 +32,11 @@ dependencies {
 
 test {
 	useJUnitPlatform()
-	testLogging { exceptionFormat = 'full' }
+	testLogging {
+		afterSuite { testDescriptor, testResult ->
+			if (!testDescriptor.parent) {
+				println "Results: ${testResult.resultType} (${testResult.testCount} tests, ${testResult.successfulTestCount} successes, ${testResult.failedTestCount} failures, ${testResult.skippedTestCount} skipped)"
+			}
+		}
+	}
 }
